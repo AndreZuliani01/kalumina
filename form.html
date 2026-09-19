@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Profile - Kalumina</title>
+    <link rel="stylesheet" href="css/form.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <a href="index.html" class="logo">
+          <img src="img/logo.png" alt="Logo Kalumina" />
+        </a>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Articles</a></li>
+            <li><a href="#">Explore Services</a></li>
+            <li><a href="#">Meet the Community</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="form-page">
+        <div class="form-container">
+          <h1>Help us understand you better</h1>
+
+          <form id="aiProfileForm">
+            <div class="form-group">
+              <label for="child-age"
+                >Child's Age <span class="required">*</span></label
+              >
+              <select id="child-age" name="child-age" required>
+                <option value="" disabled selected>Select age range</option>
+                <option value="0-3">0 - 3 years old</option>
+                <option value="4-6">4 - 6 years old</option>
+                <option value="7-12">7 - 12 years old</option>
+                <option value="13+">13+ years old</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="location">Location</label>
+              <select id="location" name="location">
+                <option value="" disabled selected>
+                  Select your city/province
+                </option>
+                <option value="jakarta">Jakarta</option>
+                <option value="bandung">Bandung</option>
+                <option value="surabaya">Surabaya</option>
+                <option value="lainnya">Lainnya</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label
+                >Special Conditions/Needs <span class="required">*</span></label
+              >
+              <p class="label-note">
+                Check the boxes that best describe your child's conditions/needs
+              </p>
+              <div class="checkbox-wrapper" id="conditions-wrapper">
+                <div class="checkbox-item">
+                  <input
+                    type="checkbox"
+                    id="asd"
+                    name="conditions"
+                    value="asd"
+                  /><label for="asd">Autism Spectrum Disorder (ASD)</label>
+                </div>
+                <div class="checkbox-item">
+                  <input
+                    type="checkbox"
+                    id="adhd"
+                    name="conditions"
+                    value="adhd"
+                  /><label for="adhd">ADHD</label>
+                </div>
+                <div class="checkbox-item">
+                  <input
+                    type="checkbox"
+                    id="down-syndrome"
+                    name="conditions"
+                    value="down-syndrome"
+                  /><label for="down-syndrome">Down Syndrome</label>
+                </div>
+                <div class="checkbox-item">
+                  <input
+                    type="checkbox"
+                    id="cerebral-palsy"
+                    name="conditions"
+                    value="cerebral-palsy"
+                  /><label for="cerebral-palsy">Cerebral Palsy</label>
+                </div>
+                <div class="checkbox-item">
+                  <input
+                    type="checkbox"
+                    id="learning-dis"
+                    name="conditions"
+                    value="learning-dis"
+                  /><label for="learning-dis">Learning Disabilities</label>
+                </div>
+                <div class="checkbox-item">
+                  <input
+                    type="checkbox"
+                    id="physical-dis"
+                    name="conditions"
+                    value="physical-dis"
+                  /><label for="physical-dis">Physical Disabilities</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="budget">Budget (Monthly)</label>
+              <select id="budget" name="budget">
+                <option value="" disabled selected>Select budget range</option>
+                <option value="<1jt">&lt; Rp 1.000.000</option>
+                <option value="1-3jt">Rp 1.000.000 - Rp 3.000.000</option>
+                <option value="3-5jt">Rp 3.000.000 - Rp 5.000.000</option>
+                <option value=">5jt">&gt; Rp 5.000.000</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Priority Services <span class="required">*</span></label>
+              <p class="label-note">
+                Check the boxes that best suit your child's conditions/needs
+              </p>
+              <div class="checkbox-wrapper" id="services-wrapper">
+                <div class="checkbox-item">
+                  <input
+                    type="checkbox"
+                    id="schools"
+                    name="services"
+                    value="schools"
+                  /><label for="schools">Special Schools</label>
+                </div>
+                <div class="checkbox-item">
+                  <input
+                    type="checkbox"
+                    id="therapy"
+                    name="services"
+                    value="therapy"
+                  /><label for="therapy">Therapy Centers</label>
+                </div>
+                <div class="checkbox-item">
+                  <input
+                    type="checkbox"
+                    id="caregivers"
+                    name="services"
+                    value="caregivers"
+                  /><label for="caregivers">Special Caregivers</label>
+                </div>
+                <div class="checkbox-item">
+                  <input
+                    type="checkbox"
+                    id="support"
+                    name="services"
+                    value="support"
+                  /><label for="support">Support Communities</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-buttons">
+              <a href="index.html" class="btn btn-cancel">Cancel</a>
+              <button type="submit" class="btn btn-submit">
+                Generate AI Profile
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <script src="form.js"></script>
+  </body>
+</html>
