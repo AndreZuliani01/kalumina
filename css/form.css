@@ -1,1 +1,254 @@
+header {
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
 
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Penting untuk menyelaraskan logo dan navigasi vertikal /
+min-height: 50px; / Tinggi minimal container header */
+}
+
+.logo img {
+  max-height: 40px; /* Tinggi maksimal logo yang lebih moderat */
+  width: auto;
+  display: block;
+}
+
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 15px; /* Jarak antar menu sedikit ditambah */
+}
+
+header nav a {
+  color: var(--accent-orange);
+  text-decoration: none;
+  font-size: 14px; /* Ukuran font sedang /
+font-weight: 500;
+padding: 8px 15px; / Padding tombol menu sedang */
+  border-radius: 20px;
+  border: 1px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+header nav a:hover {
+  color: var(--primary-blue);
+  background-color: #f0f0f0;
+}
+
+header nav a.active {
+  border: 1px solid var(--accent-red);
+  color: var(--accent-red);
+}
+
+/* ====================================================== */
+/* GAYA KHUSUS UNTUK HALAMAN FORMULIR            */
+/* ====================================================== */
+
+/* Variabel warna ini diperlukan agar halaman form bisa berdiri sendiri.
+   Jika Anda memuat style.css utama sebelum form.css, bagian ini opsional. */
+:root {
+  --primary-blue: #1a3a6d;
+  --card-blue: #2e5a98;
+  --accent-green: #6aae4a;
+  --accent-orange: #f3a83b;
+  --accent-red: #e54b4b;
+  --text-light: #ffffff;
+  --text-secondary: #b0c4de;
+}
+
+.form-page {
+  /* Ganti URL di bawah ini dengan gambar latar belakang Anda */
+  background-image: linear-gradient(
+      rgba(26, 58, 109, 0.85),
+      rgba(26, 58, 109, 0.85)
+    ),
+    url("https://images.unsplash.com/photo-1599691880414-0045177264f3?q=80&w=2070&auto=format&fit=crop");
+  background-size: cover;
+  background-position: center;
+  min-height: calc(100vh - 70px); /* Sesuaikan 70px dengan tinggi header Anda */
+  padding: 40px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-container {
+  width: 100%;
+  max-width: 500px;
+  color: white;
+}
+
+.form-container h1 {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  text-align: left;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.form-group .label-note {
+  text-align: left;
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: -5px;
+  margin-bottom: 10px;
+}
+
+.required {
+  color: var(--accent-orange);
+}
+
+/* --- Gaya untuk Dropdown (Select) --- */
+select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  color: #333;
+  background-color: white;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1em;
+  cursor: pointer;
+}
+
+/* --- Gaya untuk Checkbox --- */
+.checkbox-wrapper {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  transition: border-color 0.3s;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  margin-bottom: 12px;
+}
+
+.checkbox-item:last-child {
+  margin-bottom: 0;
+}
+
+.checkbox-item input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: white;
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
+  margin-right: 12px;
+  cursor: pointer;
+}
+
+.checkbox-item input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--accent-green);
+  transform-origin: bottom left;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+.checkbox-item input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+.checkbox-item label {
+  font-weight: normal;
+  margin: 0;
+  cursor: pointer;
+  flex: 1;
+}
+
+/* --- Gaya untuk Tombol Aksi --- */
+.form-buttons {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.btn {
+  padding: 15px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn-cancel {
+  background-color: white;
+  color: var(--primary-blue);
+  border: 1px solid var(--primary-blue);
+}
+
+.btn-submit {
+  background-color: var(--accent-green);
+  color: white;
+}
+
+/* --- Kelas untuk Error Validasi dari JavaScript --- */
+.input-error {
+  border: 2px solid var(--accent-red) !important;
+}
+
+/* ====================================================== */
+/* BAGIAN 4: FOOTER                                     */
+/* ====================================================== */
+footer {
+  background-color: var(--card-blue);
+  padding: 40px 0;
+  margin-top: 60px;
+  text-align: center;
+  border-top: 3px solid var(--accent-orange);
+}
+
+footer p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
